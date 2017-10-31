@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "Downloading required packages..."
-apt-get update
-apt-get install -y --no-install-recommends make unzip wget gfortran 
+#echo "Downloading required packages..."
+#apt-get update
+#apt-get install -y --no-install-recommends make unzip wget gfortran 
 
 cd ~/Desktop
 
