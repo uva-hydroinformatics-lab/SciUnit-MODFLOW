@@ -36,6 +36,8 @@ echo $1
 #echo "Running MODFLOW2005 using the files in `pwd`"
 wget https://www.hydroshare.org/django_irods/download/bags/$1.zip
 
+unzip $1.zip
+
 cd ~/Desktop/$1/data/contents
 
 
