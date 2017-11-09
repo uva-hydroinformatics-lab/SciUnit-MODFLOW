@@ -25,13 +25,20 @@ cd MF2005.1_12u/make
 echo "Compiling MODFLOW2005..."
 make -f makefile
 
+cd ~/Desktop
+
 # Getting the directory name from the path to the .nam file
-MODFLOWdir="$(echo $1 | sed 's/\/[^\/]*\.nam//')"
-
+#MODFLOWdir="$(echo $1 | sed 's/\/[^\/]*\.nam//')"
+echo $1
 # Switching to the directory where the files are
-cd ${MODFLOWdir}
+#cd ${MODFLOWdir}
 
-echo "Running MODFLOW2005 using the files in `pwd`"
+#echo "Running MODFLOW2005 using the files in `pwd`"
+wget https://www.hydroshare.org/django_irods/download/bags/$1.zip
 
-# Using the directory, get the .nam file and run it with that
-~/Desktop/MF2005.1_12u/make/mf2005 $1
+cd ~/Desktop/$1/data/contents
+
+
+~/Desktop/MF2005.1_12u/make/mf2005 $(find -iregex .*".nam")
+
+
