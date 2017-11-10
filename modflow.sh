@@ -14,11 +14,6 @@ cd $1/data/contents
 
 # Running MODFLOW2005 on the .nam file in the MI resource
 
-# Finding where the mf2005 executable is in the sciunit
-# This could return a mf2005 executable in a different sciunit, however...
-cd ../../..
-modflowrun=`find . -path *cde-root/*/make/mf2005 -type f | head -1`
-echo "modflowrun: $modflowrun"
-$modflowrun `find -iregex .*".nam"`
+../../../MF2005.1_12u/make/mf2005 `find . -iregex .*".nam"`
 
 
